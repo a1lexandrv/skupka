@@ -1,3 +1,3 @@
 export default function Home() {
-  return <p>Skupka.</p>;
+  return <p>The Skupka.</p>;
 }
