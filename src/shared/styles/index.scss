@@ -1,0 +1,174 @@
+@import './variables';
+@import './mixins';
+
+@import './font';
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: $color-backgroundHTML;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  max-width: 1361px;
+  margin: 0 auto;
+
+  background-color: $color-backgroundHTML;
+  color: $color-white;
+  font-size: $p1;
+  line-height: 1.2;
+
+  font-family: 'Bounded', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  background-blend-mode: multiply;
+  display: flex;
+  flex-direction: column;
+  row-gap: $space-124;
+
+  @include respond(big-screen) {
+    padding: 0 $space-16 0 $space-16;
+  }
+
+  @include respond(tab-port) {
+    row-gap: $space-54;
+  }
+}
+
+h1,
+#mainTitle {
+  font-size: $h0;
+  text-align: unset;
+
+  @include respond(tab-phone) {
+    font-size: $h2;
+  }
+}
+
+h2,
+#secondTitle {
+  font-size: $h1;
+
+  @include respond(tab-port) {
+    font-size: $h4;
+  }
+}
+
+h3,
+#thirdTitle {
+  font-size: $h2;
+  font-weight: bold;
+
+  @include respond(tab-phone) {
+    font-size: $p1;
+  }
+}
+
+p {
+  font-size: $p1;
+
+  @include respond(tab-phone) {
+    font-size: $p2;
+  }
+}
+
+#resetToParagraphStyle {
+  font-size: $p1;
+  font-weight: normal;
+
+  @include respond(tab-phone) {
+    font-size: $p2;
+  }
+}
+
+span,
+a,
+li,
+td,
+tr {
+  line-height: 130%;
+}
+
+p,
+a,
+span,
+div {
+  font-weight: lighter;
+  font-size: $p1;
+
+  @include respond(tab-phone) {
+    font-size: $p2;
+  }
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-size: $p1;
+
+  @include respond(tab-phone) {
+    font-size: $p2;
+  }
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0;
+  border-radius: 0;
+
+  //Скрываю стрелки
+  &[type='number']::-webkit-inner-spin-button,
+  &[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+// Скроллбар
+::-webkit-scrollbar {
+  width: $space-8;
+}
+
+// Бегунок скроллбара
+::-webkit-scrollbar-thumb {
+  background-color: $color-white;
+  border-radius: 5px;
+}
+
+// Трек скроллбара
+::-webkit-scrollbar-track {
+  background-color: $color-light-gray;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.sw-app-body {
+  width: 100% !important;
+  padding: 0 !important;
+}
